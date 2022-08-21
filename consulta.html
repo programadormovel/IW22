@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiro Formulário</title>
+    <link type="text/css" rel="stylesheet" href="./estilo.css" />
+</head>
+<body>
+    <form id="formulario" action="http://localhost:8085/nome"
+        method="get">
+        <div>
+            <label for="id">ID:</label>
+            <input type="text" id="id" name="id"
+                placeholder="Digite o ID para busca..."
+                required
+                 />
+        </div>
+        <div>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome"
+                disabled
+                 />
+        </div>
+        <div>
+            <label for="sobrenome">Sobrenome:</label>
+            <input type="text" id="sobrenome" name="sobrenome"
+                disabled
+                    />
+        </div>
+        <div class="button">
+            <button type="submit">Pesquisar</button>
+        </div>
+    </form>    
+</body>
+</html>

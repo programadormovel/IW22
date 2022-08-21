@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculo IMC</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="container-fluid">
+    <script type="text/javascript">
+      function calcularIMC() {
+        var resultado =
+          parseFloat(peso.value) /
+          (parseFloat(altura.value) * parseFloat(altura.value));
+        if (resultado < 16) {
+          resultado.value = "Subpeso Severo";
+          alert("Subpeso Severo");
+        } else if (resultado >= 16 && resultado < 20) {
+          resultado.value = "Subpeso";
+          alert("Subpeso");
+        } else if (resultado >= 20 && resultado < 25) {
+          resultado.value = "Normal";
+          alert("Normal");
+        } else if (resultado >= 25 && resultado < 30) {
+          resultado.value = "Sobrepeso";
+          alert("Sobrepeso");
+        } else if (resultado >= 30 && resultado < 35) {
+          resultado.value = "Obesidade Grau I";
+          alert("Obesidade Grau I");
+        } else if (resultado >= 35 && resultado < 40) {
+          document.getElementById("resultado").innerText = "Obesidade Grau II";
+          alert("Obesidade Grau II");
+        } else if (resultado >= 40) {
+          resultado.value = "Obesidade Grau III";
+          alert("Obesidade Grau III");
+        }
+      }
+    </script>
+ 
+    <div class="container-fluid">
+      <aside class="">
+        <span><a href="/IMC/index.html">Cálculo do IMC</a></span>
+      </aside>
+      <header>
+        <h1>Calcular IMC</h1>
+      </header>
+      <section>
+        <div class="mb-3">
+          <label>Entre com seu peso:</label>
+          <input type="text" id="peso" />
+        </div>
+        <div class="mb-3">
+          <label>Entre com sua altura:</label>
+          <input type="text" id="altura" />
+        </div>
+        <div>
+          <input
+            class="btn btn-primary"
+            type="button"
+            id="botao"
+            value="Calcular"
+            onclick="calcularIMC()"
+          />
+        </div>
+        <div>
+          <p>
+            <span id="resultado"></span>
+          </p>
+        </div>
+      </section>
+    </div>
+ 
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiro Formulário</title>
+    <link type="text/css" rel="stylesheet" href="./estilo.css" />
+</head>
+<body>
+    <form id="formulario" action="http://localhost:8085/nome" method="post">
+        <div>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome"
+                placeholder="Digite seu nome..."
+                required
+                 />
+        </div>
+        <div>
+            <label for="sobrenome">Sobrenome:</label>
+            <input type="text" id="sobrenome" name="sobrenome" />
+        </div>
+        <div class="button">
+            <button type="submit">Gravar nome</button>
+        </div>
+    </form>    
+</body>
+</html>

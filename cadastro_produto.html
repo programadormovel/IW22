@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Produtos</title>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      var contador = 0;
+
+      function calcular() {
+        document.getElementById("preco_total").value =
+          quantidade.value * preco_unitario.value;
+      }
+
+      function salvar() {
+        // incremento do contador
+        contador = contador + 1;
+
+        var produto = Object({
+          descricao: descricao.value,
+          quantidade: quantidade.value,
+          precoUnitario: preco_unitario.value,
+          precoTotal: preco_total.value,
+        });
+
+        // Criando e adicionando a linha na tabela
+        var linha = document.createElement("tr");
+        // Criando e adionando a coluna do contador ou numerador
+        var linha_contador = document.createElement("td");
+        linha_contador.innerHTML = contador;
+        // Criando e adionando a coluna da Descrição
+        var linha_descricao = document.createElement("td");
+        linha_descricao.innerHTML = produto.descricao;
+        // Criando e adicionando a coluna da Quantidade
+        var linha_quantidade = document.createElement("td");
+        linha_quantidade.innerHTML = produto.quantidade;
+        // Criando e adicionando a coluna do Preço Unitário
+        var linha_preco_unitario = document.createElement("td");
+        linha_preco_unitario.innerHTML = produto.precoUnitario;
+        // Criando e adicionando a coluna do Preço Total
+        var linha_preco_total = document.createElement("td");
+        linha_preco_total.innerHTML = produto.precoTotal;
+
+        // Adicionando informações na tabela
+        linha.appendChild(linha_contador);
+        linha.appendChild(linha_descricao);
+        linha.appendChild(linha_quantidade);
+        linha.appendChild(linha_preco_unitario);
+        linha.appendChild(linha_preco_total);
+        tbody.appendChild(linha);
+
+        // limpar campos
+        descricao.value = ""
+        quantidade.value = ""
+        preco_unitario.value = ""
+        preco_total.value = ""
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <section>
+        <h1>Cadastro de Produtos</h1>
+        <div class="input-group mb-3">
+          <label value="Descrição" for="descricao">Descrição: </label>
+          <input id="descricao" type="text" />
+        </div>
+        <div class="input-group mb-3">
+          <label value="Quantidade" for="quantidade">Quantidade: </label>
+          <input id="quantidade" type="number" />
+        </div>
+        <div class="input-group mb-3">
+          <label value="Preço Unitário" for="preco_unitario"
+            >Preço Unitário:
+          </label>
+          <input id="preco_unitario" type="number" />
+        </div>
+        <div class="input-group mb-3">
+          <label value="Preço Total" for="preco_total">Preço Total: </label>
+          <input id="preco_total" type="number" readonly />
+        </div>
+        <div>
+          <input
+            id="calcular"
+            type="button"
+            value="CALCULAR"
+            onclick="calcular()"
+          />
+        </div>
+        <div>
+          <input id="salvar" type="button" value="SALVAR" onclick="salvar()" />
+        </div>
+
+        <table>
+          <thead>
+            <th>#</th>
+            <th>Descrição</th>
+            <th>Quantidade</th>
+            <th>Preço Unitário</th>
+            <th>Preço Total</th>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </section>
+    </div>
+  </body>
+</html>

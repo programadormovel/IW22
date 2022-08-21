@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function entrar(){
+            var user = Object({usuario: usuario.value, senha: senha.value});
+            // alert(user.usuario)
+            // alert(user.senha)
+
+            if(user.usuario.length > 0 && user.senha.length > 0){
+                alert('sucesso')
+                window.location.replace('alerta.html')
+            } else {
+                alert('Entre com o usuário para logar!!!')
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <label>Usuario:</label>
+        <input type="text" id="usuario">
+    </div>
+    <div>
+        <label>Senha:</label>
+        <input type="password" id="senha">
+    </div>
+    <div>
+        <input type="button" id="botao" value="logar" 
+            onclick="entrar()">
+    </div>
+</body>
+</html>
